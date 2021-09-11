@@ -100,14 +100,15 @@ export class UpdateCourseModal extends Component {
 			);
 		});
 	};
+
+
 	renderNguoiTao = () => {
 		return this.props.mangNguoiDung.map((nguoiDung, index) => {
 			if (nguoiDung.maLoaiNguoiDung === "GV") {
-				return (
-					<Option key={index} size="large" value={nguoiDung.taiKhoan}>
-						{nguoiDung.hoTen}
-					</Option>
-				);
+				return <Option key={index} size="large" value={nguoiDung.taiKhoan}>
+					{nguoiDung.hoTen}
+				</Option>
+					;
 			}
 		});
 	};
@@ -150,13 +151,12 @@ export class UpdateCourseModal extends Component {
 			);
 		}
 
-		console.log(info.file);
 		this.setState(
 			{
 				khoaHocCapNhat: { ...this.state.khoaHocCapNhat, hinhAnh: info.file.originFileObj }
 			},
 			() => {
-				console.log(this.state.khoaHocCapNhat);
+				return console.log(this.state.khoaHocCapNhat);
 			}
 		);
 	};
@@ -181,7 +181,7 @@ export class UpdateCourseModal extends Component {
 				sm: { span: 16 }
 			}
 		};
-		
+
 
 		const dateFormat = "DD/MM/YYYY";
 
